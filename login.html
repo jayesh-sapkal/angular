@@ -4,7 +4,6 @@
 	<title>Login</title>
 	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 	<script src = "home.html"></script>
-
 	<script type="text/javascript" src = "data.json"></script>	
 	
 </head>
@@ -20,13 +19,13 @@
 	
 	<script>
 		var login = angular.module('login',[]);
-		login.controller('cntr',function($scope){
+		login.controller('cntr',function($scope , $window){
 		$scope.add = function(){
 			var obj = JSON.parse(users);
 			for(var i=0;i<3;i++){
 				if($scope.user == obj[i].name && $scope.pass == obj[i].password){
 				var flag = 1;
-				window.location = "home.html";
+				$window.location.href = "home.html";
 				}
 			}
 			if(flag != 1){
@@ -37,9 +36,5 @@
 	</script>
 	
 </body>
-
-
-
-
 
 
